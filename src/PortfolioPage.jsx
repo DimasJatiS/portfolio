@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, SplitText, ScrollSmoother);
    ------------------------------------------------------------------ */
 const PROJECTS = [
   {
-    id: 1, num: '01', name: 'Bloomarie', title1: 'Bloom', title2: 'arie',
+    id: 1, num: '01', name: 'Bloomarie', title1: 'Bloomarie', title2: 'arie',
     description: 'Flowers bouquet sales store with user authentication and seamless third-party payment integration. Full-stack web app with product catalog, cart, and order management.',
     tags: ['PHP', 'MySQL', 'Bootstrap'],
     url: 'https://github.com/DimasJatiS/UAS_PPW.git',
@@ -290,9 +290,9 @@ export default function PortfolioPage() {
           {/* Hero */}
           <section className="intro" id="slide-0">
             <div className="intro__content">
-              <p className="intro__eyebrow">Backend Developer &amp; Long Live Learner</p>
+              <p className="intro__eyebrow">Long Live Learner</p>
               <h1 className="intro__title">Dimas<br /><span className="neon">Jati</span></h1>
-              <p className="intro__tagline">Applied Software Engineering · Universitas Gadjah Mada<br />Web3 · Renewable Energy · Event Management</p>
+              <p className="intro__tagline">Applied Software Engineering · Universitas Gadjah Mada<br />Web3 · Programs · Renewable Energy · Event Management</p>
             </div>
             <div className="intro__scroll-hint">
               <div className="intro__scroll-line" />
@@ -473,7 +473,7 @@ export default function PortfolioPage() {
               <p className="contact__note">
                 Open to internship, freelance projects, and tech collaborations.
                 <br />
-                <span style={{ fontSize: '11px', letterSpacing: '1px', color: 'var(--muted)' }}>LINE ID: dimasjs1029</span>
+                <span style={{ fontSize: '11px', letterSpacing: '1px', color: 'var(--muted)' }}>Contact me: +62 812-68959527</span>
               </p>
             </div>
           </section>
