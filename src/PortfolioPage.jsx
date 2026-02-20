@@ -13,21 +13,21 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, SplitText, ScrollSmoother);
    ------------------------------------------------------------------ */
 const PROJECTS = [
   {
-    id: 1, num: '01', name: 'Bloomarie', title1: 'Bloomarie', title2: 'arie',
+    id: 1, num: '01', name: 'Bloomarie', title1: 'Bloomarie', title2: 'Store',
     description: 'Flowers bouquet sales store with user authentication and seamless third-party payment integration. Full-stack web app with product catalog, cart, and order management.',
     tags: ['PHP', 'MySQL', 'Bootstrap'],
     url: 'https://github.com/DimasJatiS/UAS_PPW.git',
     img: '/Bloomarie.png',
   },
   {
-    id: 2, num: '02', name: 'Inofa', title1: 'In', title2: 'ofa',
+    id: 2, num: '02', name: 'Inofa', title1: 'Inofa', title2: 'App',
     description: 'Matchmaking platform — web & mobile app with real-time live chat, advanced filter and search, and cross-platform sync for both Android and browser.',
-    tags: ['React', 'Node.js', 'Flutter', 'WebSocket'],
+    tags: ['Laravel', 'Tailwind CSS', 'MySQL', 'Pusher'],
     url: 'https://github.com/daffaadz/inofa-web-app.git',
     img: '/inofa.png',
   },
   {
-    id: 3, num: '03', name: 'AI CV Screen', title1: 'AI', title2: 'Screen',
+    id: 3, num: '03', name: 'AI CV Screen', title1: 'AI Screening', title2: 'System',
     description: 'AI-powered CV scoring system using Node.js, Gemini API, and PostgreSQL with Prisma ORM. Modular backend architecture that evaluates candidates by skill relevance.',
     tags: ['Node.js', 'Gemini API', 'PostgreSQL', 'Prisma'],
     url: 'https://ai-recruitment-screening-gdg-web.vercel.app/',
@@ -360,7 +360,7 @@ export default function PortfolioPage() {
                       rel="noreferrer"
                     >
                       <div className="slide-link__circ" />
-                      <span className="slide-link__label">View<br />Demo</span>
+                      <span className="slide-link__label">View</span>
                     </a>
                   </div>
                 </div>
