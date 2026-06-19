@@ -4,51 +4,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { SplitText } from 'gsap/SplitText';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import PROJECTS from './data/projects';
+import SKILLS from './data/skills';
+import ProjectGallery from './components/ProjectGallery';
 import './styles/portfolio.css';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, SplitText, ScrollSmoother);
-
-/* ------------------------------------------------------------------
-   Data
-   ------------------------------------------------------------------ */
-const PROJECTS = [
-  {
-    id: 1, num: '01', name: 'Bloomarie', title1: 'Bloomarie', title2: 'Store',
-    description: 'Flowers bouquet sales store with user authentication and seamless third-party payment integration. Full-stack web app with product catalog, cart, and order management.',
-    tags: ['PHP', 'MySQL', 'Bootstrap'],
-    url: 'https://github.com/DimasJatiS/UAS_PPW.git',
-    img: '/Bloomarie.png',
-  },
-  {
-    id: 2, num: '02', name: 'Inofa', title1: 'Inofa', title2: 'App',
-    description: 'Matchmaking platform — web & mobile app with real-time live chat, advanced filter and search, and cross-platform sync for both Android and browser.',
-    tags: ['Laravel', 'Tailwind CSS', 'MySQL', 'Pusher'],
-    url: 'https://github.com/daffaadz/inofa-web-app.git',
-    img: '/inofa.png',
-  },
-  {
-    id: 3, num: '03', name: 'AI CV Screen', title1: 'AI Screening', title2: 'System',
-    description: 'AI-powered CV scoring system using Node.js, Gemini API, and PostgreSQL with Prisma ORM. Modular backend architecture that evaluates candidates by skill relevance.',
-    tags: ['Node.js', 'Gemini API', 'PostgreSQL', 'Prisma'],
-    url: 'https://ai-recruitment-screening-gdg-web.vercel.app/',
-    img: '/ai-cv-screen.png',
-  },
-];
-
-const SKILLS = [
-  {
-    category: 'Languages & Frameworks', type: 'lang',
-    items: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'PHP', 'Java', 'Kotlin', 'Flutter', 'SQL'],
-  },
-  {
-    category: 'Tools & Platforms', type: 'tool',
-    items: ['Git', 'PostgreSQL', 'MongoDB', 'Prisma ORM', 'Tailwind CSS', 'GSAP', 'Android Studio', 'IntelliJ IDEA', 'VS Code', 'Vite'],
-  },
-  {
-    category: 'Creative & Soft Skills', type: 'soft',
-    items: ['Figma', 'Adobe Photoshop', 'Lightroom', 'Illustrator', 'OBS Studio', 'Microsoft Office', 'Event Management', 'Cross-functional teamwork'],
-  },
-];
 
 /* ------------------------------------------------------------------
    Component
@@ -186,10 +147,10 @@ export default function PortfolioPage() {
 
     function initParallax() {
       slides.forEach((slide) => {
-        const imageWrappers = slide.querySelectorAll('.col__image-wrap');
-        gsap.fromTo(imageWrappers, { y: '-30vh' }, {
-          y: '30vh',
-          scrollTrigger: { trigger: slide, scrub: true, start: 'top bottom', snap: { snapTo: 0.5, duration: 1, ease: 'power4.inOut' } },
+        const imageWrappers = slide.querySelectorAll('.gallery__img--active, .gallery__img');
+        gsap.fromTo(imageWrappers, { scale: 1.05 }, {
+          scale: 1,
+          scrollTrigger: { trigger: slide, scrub: true, start: 'top bottom', end: 'bottom top' },
           ease: 'none',
         });
       });
@@ -372,7 +333,7 @@ export default function PortfolioPage() {
               </div>
               <div className="col col--2">
                 <div className="col__image-wrap">
-                  <img className="img img--1" src={project.img} alt={project.name} />
+                  <ProjectGallery images={project.images} name={project.name} />
                 </div>
               </div>
             </section>
